@@ -89,6 +89,22 @@ The underline assumption in the clustering-based anomaly detection is that if we
 
 Multivariate Gaussian Distributions (multi-variate) are high dimensional normal distributions (univariate). A vector is said to be multi-variate normally distributed if all the linear combinations of its components follow normal distributions. We implemented this model on 5 of the principal components. The model learns by estimating the parameters of the distribution and assigning observations to the distribution based on the probabilities. Below is the distribution of our first 5 principal components:
 
+![image](https://user-images.githubusercontent.com/35283246/163792248-664a796f-871e-488b-88e4-a45db7d5d2ed.png)
+
+The 5 principal components chosen have near to normal distributions, all centred around 0. Each distribution is defined by its own set of parameters-mean and covariance matrices.
+
+After we calculated the mean and co-variance matrix of the five principal components, we applied a multivariate gaussian distribution on the components collectively. We defined a threshold called “epsilon” which we use to determine if an observation should be flagged as an anomaly or not. After we have set the multivariate distribution, we implemented a search algorithm using the F1 score to pick the best threshold for flagging an observation as an anomaly. 
+
+The best value for “epsilon” is determined using a stepwise iterative process. The size of the step is determined from the maximum and minimum values of the probabilities of the observations (which are determined by the multivariate normal random variable). This step is used to iterate through the range of probabilities generated, each of which is a potential epsilon. Predictions are made at every stage on the test data for every potential value of the epsilon for which the F-score is calculated. The epsilon with the highest F-score is chosen as the “best” epsilon. 
+
+Next, we will flag an observation as an anomaly if the probability of that observation to be a part of the dataset is less than the determined threshold. We got the best threshold value as  1.7111345161379106e-17.
+
+*4.4 Gaussian Mixture Model*<br>
+
+Gaussian Mixture Model can be considered a “generalized” version of k-means algorithm where clustering is done using probability measures. The Gaussian Mixture Model used applies an iterative EM (Expectation Maximization) algorithm to fit a mixture of Gaussian models where the following steps are repeated until convergence occurs:
+
+
+
 
 
 
