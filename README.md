@@ -60,6 +60,30 @@ Now, let us walk through how we used Inter Quartile range to our advantage in th
 
 Next, we implemented Univariate feature selection to select k most important features. We used the Chi-Square test to identify the 3 most important sensors in our dataset. These are as below:
 
+    Feature         Score <br>
+11  sensor_11  10106.761967<br>
+12  sensor_12   9879.052739<br>
+4   sensor_04   8167.176442<br>
+
+Lastly, we plotted the abnormalities on the time series data as seen in the figure below for sensor 11.
+
+![image](https://user-images.githubusercontent.com/35283246/163791733-93fcc32f-960b-4370-a4fa-faccadb3ec25.png)
+
+As seen from plots, there are a lot more outliers in pc1 (1st principal component) than that from pc2. The outliers in pc1 represent approximately 14% of the data set. Also the outliers in pc1 seem to better explain the failures in the sensor readings from one of the sensors, sensor_00 is used in this case.
+
+*_4.2 K-means Clustering_* 
+The underline assumption in the clustering-based anomaly detection is that if we cluster the data, normal data will belong to clusters while anomalies will not belong to any clusters or belong to small clusters. We used the following steps to find and visualize anomalies.
+
+•	Calculate the distance between each point and its nearest centroid. The biggest distances are considered as anomaly.
+•	We use outliers_fraction to provide information to the algorithm about the proportion of the outliers present in our data set. Situations may vary from data set to data set. However, as a starting figure, I estimate outliers_fraction=0.14 (14% of dataset are outliers from base model)
+•	Calculate number_of_outliers using outliers_fraction.
+•	Set threshold as the minimum distance of these outliers.
+•	The anomaly result of anomaly1 contains the above method Cluster (0:normal, 1:anomaly).
+•	Visualize anomalies with cluster view.
+•	Visualize anomalies with Time Series view.
+
+
+
 
 
 
