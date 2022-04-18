@@ -17,13 +17,57 @@ Our dataset contains sensor readings from 52 sensors installed on a pump which i
 
 ## Data Science Pipeline
 
-1.	Data Cleaning and pre-processing
+#### 1.	Data Cleaning and pre-processing
 The dataset we used had a few abnormalities, like empty columns, repetitive entries, missing values, and more. So, we had to clean the dataset. We have also utilized an interesting concept/technique called pickling for this project. Pickling is basically a technique of converting a python object into a byte stream to be stored in the file and maintain program state across all sessions in the project. Our cleaned dataset has a shape of (219521, 52).
+
+![image](https://user-images.githubusercontent.com/35283246/163791152-2733067d-6819-4e0a-a826-c0ab5ab31f5e.png)
+
  
-2.	Exploratory Data Analysis
+#### 2.	Exploratory Data Analysis
 Below we visualize the distribution of some of the sensors.
 We can see most of the sensor readings follow a normal distribution which is intuitive and this observation lets us use multivariate gaussian techniques.
 We also visualized the correlation of all the sensors (below) with each other to better understand any underlying connection between them. The numbers highlighted in shades of green, blue, and purple indicate that the sensors they represent are highly correlated. This means that they have a strong relationship with each other. If a sensor detects an anomaly, it is likely that the remaining sensors with which it is strongly correlated will also detect the anomaly.
+
+![image](https://user-images.githubusercontent.com/35283246/163791166-7768f76f-7bea-4b79-acc9-7795d6e7099d.png)
+
+Sensors 2-12 seem to have high positive correlation with values ranging from around 0.2 to 0.9 whereas sensor 37 has high negative correlation with sensors 13, 35, 36 respectively with correlation values around -0.5. 
+As we aim to find anomalies in the machinery, our focus will be on the detection of the machines which have a predicted status of "Broken" and "Recovering". Below is an excerpt from the plots of the readings of 2 of the sensors with respect to time. The 'Broken' readings are marked with a red cross and the ' Recovering ' readings are highlighted in yellow to indicate the anomaly.
+
+![image](https://user-images.githubusercontent.com/35283246/163791221-57dd6f07-adcf-46c8-8518-3add7c7f38b8.png)
+
+As seen clearly from the above plots, the red marks, which represent the broken state of the pump, perfectly overlaps with the observed disturbances of the sensor reading. Now we have a pretty good intuition about how each of the sensor reading behaves when the pump is broken vs operating normally.
+
+#### 3.	Feature Engineering
+Feature Engineering is a machine learning technique that takes advantage of data to generate new variables that are originally not a part of the training dataset. Feature Engineering can be used to produce new features for supervised learning as well as unsupervised learning. The primary purpose of feature engineering is to simplify as well as speed up data transformations while improving model accuracy. In this step, we will scale the data and apply Principal Component Analysis (PCA) to extract the most important features to be further used in training models. It is computationally quite expensive to process the data of this size, (219521, 53), hence the reason for reducing the dimensionality with PCA.
+
+![image](https://user-images.githubusercontent.com/35283246/163791274-d07051d9-478f-44ce-8354-286f8580f9a3.png)
+
+It appears that the first two principal components are the most important as per the features extracted by the PCA in above importance plot. So as the next step, I will perform PCA with 2 components which will be my features to be used in the training of the base model and the unsupervised model.
+Next, we checked the stationarity and autocorrelation of these two principal components just to be sure they are stationary and not autocorrelated. 
+
+*_Stationarity Test : For this we used the Augmented Dickey Fuller Test. Running the Dickey Fuller test on the 1st principal component, we got a p-value of 5.4536849418486247e-05 which is very small number (much smaller than 0.05). Thus, we rejected the Null Hypothesis and say the data is stationary. We performed the same on the 2nd component and got a similar result. So both principal components are stationary.
+
+*_Autocorrelation Test : For this test, we used the ACF plot  to visually verify that there is no autocorrelation for the two principal components. As evident from the below plot our two components have no autocorrelation. 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
  
 
 
