@@ -55,6 +55,7 @@ Next, we checked the stationarity and autocorrelation of these two principal com
 Statistical modelling can be defined as the process of applying statistical analysis to a dataset. It uses mathematical models and statistical assumptions to generate sample data and make predictions. We have used the following statistical modelling techniques –
 
 *_4.1 BASE Model : Inter Quartile Range_* <br>
+
 The interquartile range is the difference between the third quartile and the first quartile of the distribution, and it is used to measure variability. It helps us get an estimate of how wide our distribution is.
 
 Now, let us walk through how we used Inter Quartile range to our advantage in this project. First, we calculated the inter quartile range which is the difference between Q3 and Q1. We then calculated the upper bound and the lower bound i.e. 1.5 times of IQR to mark the outliers. As we have now created the upper and lower bounds, we are able to classify any data points out of the bounds as outliers/anomalies. So, any data points that fell outside the upper and lower bounds were flagged and marked as anomalies/outliers. 
@@ -72,7 +73,8 @@ Lastly, we plotted the abnormalities on the time series data as seen in the figu
 
 As seen from plots, there are a lot more outliers in pc1 (1st principal component) than that from pc2. The outliers in pc1 represent approximately 14% of the data set. Also the outliers in pc1 seem to better explain the failures in the sensor readings from one of the sensors, sensor_00 is used in this case.
 
-*_4.2 K-means Clustering_* 
+*_4.2 K-means Clustering_*<br>
+
 The underline assumption in the clustering-based anomaly detection is that if we cluster the data, normal data will belong to clusters while anomalies will not belong to any clusters or belong to small clusters. We used the following steps to find and visualize anomalies.
 
 *Calculate the distance between each point and its nearest centroid. The biggest distances are considered as anomaly.*<br>
@@ -103,6 +105,9 @@ Next, we will flag an observation as an anomaly if the probability of that obser
 
 Gaussian Mixture Model can be considered a “generalized” version of k-means algorithm where clustering is done using probability measures. The Gaussian Mixture Model used applies an iterative EM (Expectation Maximization) algorithm to fit a mixture of Gaussian models where the following steps are repeated until convergence occurs:
 
+•	E-Step- “Soft clustering” is performed. This means that there are no restrictions on the number of clusters a datapoint may belong to (unlike k-means which performs hard clustering and assigns a datapoint to only one cluster) and considers the possibility that clusters may overlap (mixed membership). This step returns the probability of each point belonging in a certain cluster (in our case, anomaly or not)<br>
+
+•	M-Step-  updates the membership and parameters of the clusters
 
 
 
