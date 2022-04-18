@@ -116,8 +116,28 @@ We used the model for anomaly detection in 2 ways:
 #### 5.	Evaluation and Comparison of Models 
 For this project as seen above, we have used 4 different models namely Interquartile Range, K-Means clustering, Multivariate Gaussian Distribution and Gaussian Mixture Model. Now, let us compare the results that we received from these three models. We have indexed 0: as a normal and well-functioning machine and 1: as an anomaly. 
 
+![image](https://user-images.githubusercontent.com/35283246/163792590-ae2990d9-1d77-4309-9e3a-4b6322a84aef.png)
 
+![image](https://user-images.githubusercontent.com/35283246/163792599-64361c87-5106-4b65-ac5b-0f618853df0f.png)
 
+ we choose the Multivariate Gaussian Distribution model as our best model.
+
+## Conclusion
+
+So far, we have done anomaly detection with four different methods. In doing so, we went through most of the steps of the commonly applied Data Science Process which includes the following steps:
+
+1.	Problem Identification
+2.	Data Wrangling
+3.	Exploratory Data Analysis
+4.	Pre-processing and training data development
+5.	Modeling
+6.	Documentation
+
+One of the challenges we faced during this project is that training anomaly detection models with unsupervised learning algorithms with such a large data set can be computationally very expensive. This limited us from implementing SVM (Support Vector Machine modelling) on this data as it was taking a very long time to train the model with no success. We suggest the following next steps on improving the model:
+
+1.	Feature selection using advanced techniques
+2.	Advanced hyperparameter tuning
+3.	Implementing other learning algorithms such as SVM, DBSCAN, etc.
 
 
 
