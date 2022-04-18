@@ -53,9 +53,11 @@ Next, we checked the stationarity and autocorrelation of these two principal com
 
 #### 4.	Statistical Modelling
 Statistical modelling can be defined as the process of applying statistical analysis to a dataset. It uses mathematical models and statistical assumptions to generate sample data and make predictions. We have used the following statistical modelling techniques –
-*_4.1 BASE Model : Inter Quartile Range*_ <br>
-The interquartile range is the difference between the third quartile and the first quartile of the distribution, and it is used to measure variability. It helps us get an estimate of how wide our distribution is. 
+*_4.1 BASE Model : Inter Quartile Range_* <br>
+The interquartile range is the difference between the third quartile and the first quartile of the distribution, and it is used to measure variability. It helps us get an estimate of how wide our distribution is.
+
 Now, let us walk through how we used Inter Quartile range to our advantage in this project. First, we calculated the inter quartile range which is the difference between Q3 and Q1. We then calculated the upper bound and the lower bound i.e. 1.5 times of IQR to mark the outliers. As we have now created the upper and lower bounds, we are able to classify any data points out of the bounds as outliers/anomalies. So, any data points that fell outside the upper and lower bounds were flagged and marked as anomalies/outliers. 
+
 Next, we implemented Univariate feature selection to select k most important features. We used the Chi-Square test to identify the 3 most important sensors in our dataset. These are as below:
 
 
