@@ -76,11 +76,11 @@ The underline assumption in the clustering-based anomaly detection is that if we
 
 *Calculate the distance between each point and its nearest centroid. The biggest distances are considered as anomaly.
 *We use outliers_fraction to provide information to the algorithm about the proportion of the outliers present in our data set. Situations may vary from data set to data set. However, as a starting figure, I estimate outliers_fraction=0.14 (14% of dataset are outliers from base model)
-*Calculate number_of_outliers using outliers_fraction.
-*Set threshold as the minimum distance of these outliers.
-*The anomaly result of anomaly1 contains the above method Cluster (0:normal, 1:anomaly).
-*Visualize anomalies with cluster view.
-*Visualize anomalies with Time Series view.
+*Calculate number_of_outliers using outliers_fraction.*<br>
+*Set threshold as the minimum distance of these outliers.*<br>
+*The anomaly result of anomaly1 contains the above method Cluster (0:normal, 1:anomaly).*<br>
+*Visualize anomalies with cluster view.*<br>
+*Visualize anomalies with Time Series view.*<br>
 
 
 
