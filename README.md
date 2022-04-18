@@ -109,6 +109,15 @@ Gaussian Mixture Model can be considered a “generalized” version of k-means 
 
 •	M-Step-  updates the membership and parameters of the clusters
 
+We used the model for anomaly detection in 2 ways:
+1) Predicting the labels from the model generated<br>
+2) Using the predicted probabilities from the model to detect anomalies. This was implemented using the same threshold mechanism as used in the Multivariate Gaussian Distribution model.<br>
+
+#### 5.	Evaluation and Comparison of Models 
+For this project as seen above, we have used 4 different models namely Interquartile Range, K-Means clustering, Multivariate Gaussian Distribution and Gaussian Mixture Model. Now, let us compare the results that we received from these three models. We have indexed 0: as a normal and well-functioning machine and 1: as an anomaly. 
+
+
+
 
 
 
