@@ -45,9 +45,9 @@ Feature Engineering is a machine learning technique that takes advantage of data
 It appears that the first two principal components are the most important as per the features extracted by the PCA in above importance plot. So as the next step, I will perform PCA with 2 components which will be my features to be used in the training of the base model and the unsupervised model.
 Next, we checked the stationarity and autocorrelation of these two principal components just to be sure they are stationary and not autocorrelated. 
 
-*_Stationarity Test : For this we used the Augmented Dickey Fuller Test. Running the Dickey Fuller test on the 1st principal component, we got a p-value of 5.4536849418486247e-05 which is very small number (much smaller than 0.05). Thus, we rejected the Null Hypothesis and say the data is stationary. We performed the same on the 2nd component and got a similar result. So both principal components are stationary.
+*_Stationarity Test : For this we used the Augmented Dickey Fuller Test. Running the Dickey Fuller test on the 1st principal component, we got a p-value of 5.4536849418486247e-05 which is very small number (much smaller than 0.05). Thus, we rejected the Null Hypothesis and say the data is stationary. We performed the same on the 2nd component and got a similar result. So both principal components are stationary._*
 
-*_Autocorrelation Test : For this test, we used the ACF plot  to visually verify that there is no autocorrelation for the two principal components. As evident from the below plot our two components have no autocorrelation. 
+*_Autocorrelation Test : For this test, we used the ACF plot  to visually verify that there is no autocorrelation for the two principal components. As evident from the below plot our two components have no autocorrelation._* 
 
 
 
