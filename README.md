@@ -53,6 +53,7 @@ Next, we checked the stationarity and autocorrelation of these two principal com
 
 #### 4.	Statistical Modelling
 Statistical modelling can be defined as the process of applying statistical analysis to a dataset. It uses mathematical models and statistical assumptions to generate sample data and make predictions. We have used the following statistical modelling techniques –
+
 *_4.1 BASE Model : Inter Quartile Range_* <br>
 The interquartile range is the difference between the third quartile and the first quartile of the distribution, and it is used to measure variability. It helps us get an estimate of how wide our distribution is.
 
@@ -81,6 +82,13 @@ The underline assumption in the clustering-based anomaly detection is that if we
 *The anomaly result of anomaly1 contains the above method Cluster (0:normal, 1:anomaly).*<br>
 *Visualize anomalies with cluster view.*<br>
 *Visualize anomalies with Time Series view.*<br>
+
+![image](https://user-images.githubusercontent.com/35283246/163792170-96eacc08-cf5b-4115-a377-edc598d2074c.png)
+
+*4.3 Multivariate Gaussian Distribution*<br>
+
+Multivariate Gaussian Distributions (multi-variate) are high dimensional normal distributions (univariate). A vector is said to be multi-variate normally distributed if all the linear combinations of its components follow normal distributions. We implemented this model on 5 of the principal components. The model learns by estimating the parameters of the distribution and assigning observations to the distribution based on the probabilities. Below is the distribution of our first 5 principal components:
+
 
 
 
